@@ -1,4 +1,4 @@
-@extends ('Layout.Petugas')
+@extends ('Layouts.Petugas')
 
                     <!--begin::Aside menu-->
              

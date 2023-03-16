@@ -316,22 +316,37 @@
                     </div>
                     <!--end::Col-->
                 </div>
+               
                 <!--end::Row-->
                 <!--begin::Highlight-->
                 <div class="d-flex flex-stack flex-wrap flex-md-nowrap card-rounded shadow p-8 p-lg-12 mb-n5 mb-lg-n13" style="background: linear-gradient(90deg, #20AA3E 0%, #03A588 100%);">
                     <!--begin::Content-->
                     <div class="my-2 me-5">
                         <!--begin::Title-->
-                        <div class="fs-1 fs-lg-2qx fw-bolder text-white mb-2">Aplikasi Pengaduan Masyarakat
+                        <div class="fs-1 fs-lg-2qx fw-bolder text-white mb-2">Aplikasi Pengaduan Masyarakat ( Data Sementara)
                             </div>
                         <!--end::Title-->
                         <!--begin::Description-->
-                        <div class="fs-6 fs-lg-5 text-white fw-bold opacity-75">Kami Hadir Untukmu, Bergabunglah Bersama Ratusan Orang Yang Sudah Terbantu Oleh Keberadaan Kami</div>
+                        <div class="fs-6 fs-lg-5 text-white fw-bold opacity-75"> <?php
+                                              $masyarakat =  DB::table('users')->wherein('role', ['masyarakat'])->get();
+                                              $tanggapan = DB::table('tanggapans')->get();
+                                              $pengaduan = DB::table('pengaduans')->wherein('status', ['selesai'])->get();  
+                                              
+                                              ?>
+                                                <span class="fs-4 fw-bolder">Masyarakat Terdaftar :</span>
+												 <span class="fs-4 fw-bolder">{{$masyarakat->count()}}</span>
+                                                 <br>
+                                                 <span class="fs-4 fw-bolder">Tanggapan Pengaduan</span>
+												<span class="fs-4 fw-bolder">{{$tanggapan->count()}} </span>
+                                                <br>
+                                                <span class="fs-4 fw-bolder">Pengaduan Terselesaikan</span>                            
+												<span class="fs-4 fw-bolder">{{$pengaduan->count()}}</span>
+</div>
                         <!--end::Description-->
                     </div>
                     <!--end::Content-->
                     <!--begin::Link-->
-                    <a href="" class="btn btn-lg btn-outline border-2 btn-outline-white flex-shrink-0 my-2">Mendaftarlah Di Sini</a>
+                    <a href="/register" class="btn btn-lg btn-outline border-2 btn-outline-white flex-shrink-0 my-2">Mendaftarlah Di Sini</a>
                     <!--end::Link-->
                 </div>
                 <!--end::Highlight-->

@@ -1,10 +1,3 @@
-<!-- <th class="min-w-150px">Id Pengaduan</th>
-													<th class="min-w-140px">Nama Petugas</th>
-													<th class="min-w-120px">Tanggal Tanggapan</th>
-													<th class="min-w-120px">Foto</th>
-													<th class="min-w-120px">Isi Tanggapan</th>
-													<th class="min-w-120px">Status</th> -->
-
 
                                                     <!DOCTYPE html>
 
@@ -33,6 +26,9 @@
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
+	@if(Session::has('success'))
+    <div class="alert alert-success"> {{ Session::get('success') }}</div>
+  @endif
 	<body id="kt_body" class="bg-body">
 		<!--begin::Main-->
 		<div class="d-flex flex-column flex-root">
@@ -70,7 +66,8 @@
 					<!--begin::Wrapper-->
 					<div class="d-flex flex-center p-15 shadow bg-body rounded w-100 w-md-550px mx-auto ms-xl-20">
 						<!--begin::Form-->
-						<form class="form" novalidate="novalidate" id="kt_free_trial_form" action="">
+						<form class="form"  id="kt_free_trial_form" action="{{route('tanggapan.store')}}" method="POST" enctype="multipart/form-data">
+							@csrf
 							<!--begin::Heading-->
 							<div class="text-center mb-10">
 								<!--begin::Title-->
@@ -82,20 +79,32 @@
 							</div>
 							<!--begin::Heading-->
 							<!--begin::Input group-->
+							<?php
+							use App\Http\Models\Pengaduan;
+							$pengaduan = DB::table('pengaduans')->where('id')->get();
+						
+							?>
+							
+							@foreach ($pengaduan as $item)
 							<div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">ID Pengaduan</label>
-								<input class="form-control form-control-solid" type="text" placeholder="" name="id_pengaduan" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6" >ID Pengaduan</label>
+								<input class="form-control form-control-solid" type="text" placeholder="" name="id_pengaduan" autocomplete="off" value="{{$item->id}}" />
 							</div>
+							@endforeach
+							
                             <div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">Nama Petugas</label>
-								<input class="form-control form-control-solid" type="text" placeholder="Nama Petugas" name="nama_petugas" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6" style="display:none;">ID Petugas</label>
+								
+								<input class="form-control form-control-solid" type="text" placeholder="ID Petugas" name="id_petugas" autocomplete="off"  style="display:none;"value="<?php echo Auth::user()->id?>" />
                                 
 							</div>
+							
                             <div class="fv-row mb-10">
 								<label class="form-label fw-bolder text-dark fs-6">Tanggal Tanggapan</label>
 								<input class="form-control form-control-solid" type="date" placeholder="" name="tgl_tanggapan" autocomplete="off" />
                                 
 							</div>
+							
                             <div class="fv-row mb-10">
 								<label class="form-label fw-bolder text-dark fs-6">Tanggapan</label>
 								<input class="form-control form-control-solid" type="textarea" placeholder="" name="tanggapan" autocomplete="off" />
@@ -121,10 +130,8 @@
 							<!--end::Row-->
 							<!--begin::Row-->
 							<div class="text-center pb-lg-0 pb-8">
-								<button type="submit" id="kt_free_trial_submit" class="btn btn-lg btn-primary fw-bolder">
-									<span class="indicator-label">Buat Tanggapan</span>
-									<span class="indicator-progress">Please wait...
-									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								<button type="submit" class="btn btn-lg btn-primary fw-bolder">
+									Buat Tanggapan
 								</button>
 							</div>
 							<!--end::Row-->

@@ -70,8 +70,10 @@
 					<!--begin::Wrapper-->
 					<div class="d-flex flex-center p-15 shadow bg-body rounded w-100 w-md-550px mx-auto ms-xl-20">
 						<!--begin::Form-->
-						<form class="form" novalidate="novalidate" id="kt_free_trial_form" action="">
+						<form class="form" novalidate="novalidate" id="kt_free_trial_form" action="{{route('tanggapan.update' , $tanggapan->id)}}" method="POST" enctype="multipart/form-data">
 							<!--begin::Heading-->
+							@csrf
+							@method ('PUT')
 							<div class="text-center mb-10">
 								<!--begin::Title-->
 								<h1 class="text-dark mb-3">Halaman Tanggapan</h1>
@@ -83,12 +85,13 @@
 							<!--begin::Heading-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">ID Pengaduan</label>
-								<input class="form-control form-control-solid" type="text" placeholder="" name="id_pengaduan" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6" style="display:none;">ID Pengaduan</label>
+								<input class="form-control form-control-solid" type="text" placeholder="" name="id_pengaduan" autocomplete="off" style="display:none;" value="" />
 							</div>
                             <div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">Nama Petugas</label>
-								<input class="form-control form-control-solid" type="text" placeholder="Nama Petugas" name="nama_petugas" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6" style="display:none;">ID Petugas</label>
+								
+								<input class="form-control form-control-solid" type="text" placeholder="ID Petugas" name="id_petugas" autocomplete="off"  style="display:none;"value="<?php echo Auth::user()->id?>" />
                                 
 							</div>
                             <div class="fv-row mb-10">
@@ -121,10 +124,8 @@
 							<!--end::Row-->
 							<!--begin::Row-->
 							<div class="text-center pb-lg-0 pb-8">
-								<button type="submit" id="kt_free_trial_submit" class="btn btn-lg btn-primary fw-bolder">
-									<span class="indicator-label">Buat Tanggapan</span>
-									<span class="indicator-progress">Please wait...
-									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								<button type="submit" value="submit" class="btn btn-lg btn-primary fw-bolder">
+								Submit
 								</button>
 							</div>
 							<!--end::Row-->

@@ -20,7 +20,8 @@
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
     <!--begin::Fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
     <!--begin::Page Vendor Stylesheets(used by this page)-->
     <link href="assets/plugins/custom/leaflet/leaflet.bundle.css" rel="stylesheet" type="text/css" />
@@ -228,6 +229,14 @@
 												<span class="menu-title">List Pengaduan</span>
 											</a>
 										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="/historypengaduan">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">Riwayat Pengaduan</span>
+											</a>
+										</div>
 									
 									</div>
 								</div>
@@ -259,6 +268,14 @@
 													<span class="bullet bullet-dot"></span>
 												</span>
 												<span class="menu-title">List Tanggapan</span>
+											</a>
+										</div>
+										<div class="menu-item">
+											<a class="menu-link" href="/historytanggapan">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+												<span class="menu-title">Riwayat Tanggapan</span>
 											</a>
 										</div>
 										
@@ -334,4 +351,5 @@
 		<script src="assets/js/custom/modals/create-app.js"></script>
 		<script src="assets/js/custom/modals/upgrade-plan.js"></script>
 		<!--end::Page Custom Javascript-->
+		
 		<!--end::Javascript-->

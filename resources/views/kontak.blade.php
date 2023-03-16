@@ -3,7 +3,7 @@
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="../../">
-		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+		<title>Aplikasi Pengaduan Masyarakat - Halaman Kontak</title>
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -157,7 +157,7 @@
 							<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-20 py-3 py-lg-0 me-3">
 								<!--begin::Heading-->
 								<h1 class="d-flex flex-column text-dark fw-bolder my-1">
-									<span class="text-white fs-1">Contact Us</span>
+									<span class="text-white fs-1">Kontak Kami </span>
 								</h1>
 								<!--end::Heading-->
 								<!--begin::Breadcrumb-->
@@ -395,7 +395,7 @@
 										<!--begin::Wrapper-->
 										<div class="d-flex flex-column align-items-start justift-content-center flex-equal me-5">
 											<!--begin::Title-->
-											<h1 class="fw-bolder fs-4 fs-lg-1 text-gray-800 mb-5 mb-lg-10">How Can We Help You?</h1>
+											<h1 class="fw-bolder fs-4 fs-lg-1 text-gray-800 mb-5 mb-lg-10">Bagaimana Cara Kami Menolong Anda ?</h1>
 											<!--end::Title-->
 											<!--begin::Input group-->
 											<div class="position-relative w-100">
@@ -407,7 +407,7 @@
 													</svg>
 												</span>
 												<!--end::Svg Icon-->
-												<input type="text" class="form-control fs-4 py-4 ps-14 text-gray-700 placeholder-gray-400 mw-500px" name="search" value="" placeholder="Ask a question" />
+												<input type="text" class="form-control fs-4 py-4 ps-14 text-gray-700 placeholder-gray-400 mw-500px" name="search" value="" placeholder="Tanya" />
 											</div>
 											<!--end::Input group-->
 										</div>
@@ -429,7 +429,7 @@
 											
 											<!--begin::Nav item-->
 											<li class="nav-item my-1">
-												<a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase active" href="../../demo9/dist/apps/support-center/contact.html">Contact US</a>
+												<a class="btn btn-color-gray-600 btn-active-white btn-active-color-primary fw-boldest fs-8 fs-lg-base nav-link px-3 px-lg-8 mx-1 text-uppercase active" href="../../demo9/dist/apps/support-center/contact.html">Kontak Kami</a>
 											</li>
 											<!--end::Nav item-->
 										</ul>
@@ -452,13 +452,13 @@
 										<div class="col-md-6 pe-lg-10">
 											<!--begin::Form-->
 											<form action="" class="form mb-15" method="post" id="kt_contact_form">
-												<h1 class="fw-bolder text-dark mb-9">Send Us Email</h1>
+												<h1 class="fw-bolder text-dark mb-9">Kirim Kami Email</h1>
 												<!--begin::Input group-->
 												<div class="row mb-5">
 													<!--begin::Col-->
 													<div class="col-md-6 fv-row">
 														<!--begin::Label-->
-														<label class="fs-5 fw-bold mb-2">Name</label>
+														<label class="fs-5 fw-bold mb-2">Nama</label>
 														<!--end::Label-->
 														<!--begin::Input-->
 														<input type="text" class="form-control form-control-solid" placeholder="" name="name" />
@@ -480,7 +480,7 @@
 												<!--begin::Input group-->
 												<div class="d-flex flex-column mb-5 fv-row">
 													<!--begin::Label-->
-													<label class="fs-5 fw-bold mb-2">Subject</label>
+													<label class="fs-5 fw-bold mb-2">Subjek</label>
 													<!--end::Label-->
 													<!--begin::Input-->
 													<input class="form-control form-control-solid" placeholder="" name="subject" />
@@ -489,14 +489,14 @@
 												<!--end::Input group-->
 												<!--begin::Input group-->
 												<div class="d-flex flex-column mb-10 fv-row">
-													<label class="fs-6 fw-bold mb-2">Message</label>
+													<label class="fs-6 fw-bold mb-2">Pesan</label>
 													<textarea class="form-control form-control-solid" rows="6" name="message" placeholder=""></textarea>
 												</div>
 												<!--end::Input group-->
 												<!--begin::Submit-->
 												<button type="submit" class="btn btn-primary" id="kt_contact_submit_button">
 													<!--begin::Indicator-->
-													<span class="indicator-label">Send Feedback</span>
+													<span class="indicator-label">Kirim Feedback</span>
 													<span class="indicator-progress">Please wait...
 													<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 													<!--end::Indicator-->
@@ -525,10 +525,10 @@
 												<!--SVG file not found: icons/duotune/finance/fin006.svgPhone.svg-->
 												<!--end::Icon-->
 												<!--begin::Subtitle-->
-												<h1 class="text-dark fw-bolder my-5">Let’s Speak</h1>
+												<h1 class="text-dark fw-bolder my-5">Ayo Ngobrol </h1>
 												<!--end::Subtitle-->
 												<!--begin::Number-->
-												<div class="text-gray-700 fw-bold fs-2">1 (833) 597-7538</div>
+												<div class="text-gray-700 fw-bold fs-2">+62 (833) 597-7538</div>
 												<!--end::Number-->
 											</div>
 											<!--end::Phone-->

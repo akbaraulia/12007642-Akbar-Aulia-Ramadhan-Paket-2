@@ -42,8 +42,9 @@
                 <!--begin::Wrapper-->
                 <div class="w-lg-600px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
                     <!--begin::Form-->
-                    <form class="form w-100" id="kt_sign_up_form">
-                        <!--begin::Heading-->
+                    <form class="form w-100" action="/register" method="POST" enctype="multipart/form-data">
+                    @csrf    
+                    <!--begin::Heading-->
                         <div class="mb-10 text-center">
                             <!--begin::Title-->
                             <h1 class="text-dark mb-3">Create an Account</h1>
@@ -75,25 +76,19 @@
                             <!--end::Col-->
                             <!--begin::Col-->
                             <div class="col-xl-6">
-                                <label class="form-label fw-bolder text-dark fs-6">Username</label>
-                                <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="username" autocomplete="off" />
+                                <label class="form-label fw-bolder text-dark fs-6">Email</label>
+                                <input class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="email" autocomplete="off" />
                             </div>
                             <!--end::Col-->
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
-                        <div class="fv-row mb-7">
-                            <label class="form-label fw-bolder text-dark fs-6">Email</label>
-                            <input class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="email" autocomplete="off" />
-                        </div>
+                        
                         <div class="fv-row mb-7">
                             <label class="form-label fw-bolder text-dark fs-6">No Telepon</label>
-                            <input class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="no_telp" autocomplete="off" />
+                            <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="no_telp" autocomplete="off" />
                         </div>
-                         <div class="fv-row mb-7">
-                            <label class="form-label fw-bolder text-dark fs-6">Foto Diri</label>
-                            <input class="form-control form-control-lg form-control-solid" type="file" placeholder="" name="foto" autocomplete="off" />
-                        </div>
+                         
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="mb-10 fv-row" data-kt-password-meter="true">
@@ -139,7 +134,7 @@
                         <!--begin::Input group-->
                         <div class="fv-row mb-10">
                             <label class="form-check form-check-custom form-check-solid form-check-inline">
-									<input class="form-check-input" type="checkbox" name="toc" value="1" />
+									<input class="form-check-input" type="checkbox" />
 									<span class="form-check-label fw-bold text-gray-700 fs-6">I Agree
 									<a href="#" class="ms-1 link-primary">Terms and conditions</a>.</span>
 								</label>
@@ -147,10 +142,8 @@
                         <!--end::Input group-->
                         <!--begin::Actions-->
                         <div class="text-center">
-                            <button type="button" id="kt_sign_up_submit" class="btn btn-lg btn-primary">
-									<span class="indicator-label">Submit</span>
-									<span class="indicator-progress">Please wait...
-									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                            <button type="submit"  class="btn btn-lg btn-primary">
+									Submit
 								</button>
                         </div>
                         <!--end::Actions-->

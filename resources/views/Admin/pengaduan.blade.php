@@ -190,28 +190,14 @@
 												<!--begin::Menu sub-->
 												<div class="menu-sub menu-sub-dropdown w-175px py-4">
 													<!--begin::Menu item-->
-													<div class="menu-item px-3">
-														<a href="#" class="menu-link px-3">Admin Group</a>
-													</div>
-													<!--end::Menu item-->
-													<!--begin::Menu item-->
-													<div class="menu-item px-3">
-														<a href="#" class="menu-link px-3">Staff Group</a>
-													</div>
-													<!--end::Menu item-->
-													<!--begin::Menu item-->
-													<div class="menu-item px-3">
-														<a href="#" class="menu-link px-3">Member Group</a>
-													</div>
+													
 													<!--end::Menu item-->
 												</div>
 												<!--end::Menu sub-->
 											</div>
 											<!--end::Menu item-->
 											<!--begin::Menu item-->
-											<div class="menu-item px-3">
-												<a href="#" class="menu-link px-3">New Contact</a>
-											</div>
+											
 											<!--end::Menu item-->
 											<!--begin::Menu separator-->
 											<div class="separator mt-3 opacity-75"></div>
@@ -219,7 +205,7 @@
 											<!--begin::Menu item-->
 											<div class="menu-item px-3">
 												<div class="menu-content px-3 py-3">
-													<a class="btn btn-primary btn-sm px-4" href="/generatereports">Generate Reports</a>
+													<a class="btn btn-primary btn-sm px-4" href="/generateLaporan">Generate Laporan</a>
 												</div>
 											</div>
 											<!--end::Menu item-->
@@ -243,14 +229,13 @@
 															<input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-13-check" />
 														</div>
 													</th>
-													<th class="min-w-150px">Id Pengaduan</th>
-													<th class="min-w-140px">Nama Pelapor</th>
-													<th class="min-w-140px">NIK Pelapor</th>
-													<th class="min-w-120px">Tanggal Pengaduan</th>
-													<th class="min-w-120px">Foto</th>
-													<th class="min-w-120px">Isi Laporan</th>
-													<th class="min-w-120px">Status</th>
-													<th class="min-w-100px text-end">Actions</th>
+													<th class="min-w-140px text-dark fw-bolder ">Nama Pelapor</th>
+													<th class="min-w-140px text-dark fw-bolder ">NIK Pelapor</th>
+													<th class="min-w-90px text-dark fw-bolder " >TGL Pengaduan</th>
+													<th class="min-w-120px text-dark fw-bolder ">Foto</th>
+													<th class="min-w-120px text-dark fw-bolder ">Isi Laporan</th>
+													<th class="min-w-120px text-dark fw-bolder ">Status</th>
+													<th class="min-w-100px text-end text-dark fw-bolder" >Actions</th>
 												</tr>
 											</thead>
 											<!--end::Table head-->
@@ -263,9 +248,7 @@
 															<input class="form-check-input widget-13-check" type="checkbox" value="1" />
 														</div>
 													</td>
-													<td>
-														<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">{{$pengaduan->id}}</a>
-													</td>
+													
 													<td>
 														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$pengaduan->nama_pelapor}}</a>
 														
@@ -278,7 +261,7 @@
 														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$pengaduan->tgl_pengaduan}}</a>
 													</td>
 													<td>
-														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"><img src= "{{asset('uploads/' . $pengaduan->foto)}}" width="250px;" height="250px;"></a>
+														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"><img src="{{('uploads/'.$pengaduan->foto)}}" width="200px;" height="200px;"></a>
 													</td>
 													<td class="text-dark fw-bolder text-hover-primary fs-6">{{$pengaduan->isi_laporan}}</td>
 													<td>
@@ -295,7 +278,7 @@
 															</span>
 															<!--end::Svg Icon-->
 														</a>
-														<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+														<a href="{{route ('tanggapan.create')}}" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
 															<!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
 															<span class="svg-icon svg-icon-3">
 																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -307,7 +290,8 @@
 														</a>
 														<form action="{{ route ('pengaduan.destroy', $pengaduan->id)}}" method="POST">
 															@csrf
-															@method ('DELETE')
+															@method ('delete')
+															
 															<button class=" svg-icon svg-icon-3 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
 																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 																		<path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="black" />
@@ -324,3 +308,4 @@
 												
 
 @endforeach
+

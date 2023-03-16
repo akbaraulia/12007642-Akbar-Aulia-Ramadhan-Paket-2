@@ -77,29 +77,34 @@
 							<!--begin::Heading-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">Nama Pengadu</label>
-								<input class="form-control form-control-solid" type="text" placeholder="" name="nama" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6" style="display:none">Nama Pengadu</label>
+								<input class="form-control form-control-solid" type="text" placeholder="" name="nama" autocomplete="off" style="display:none" />
 							</div>
 							<div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">NIK</label>
-								<input class="form-control form-control-solid" type="text" placeholder="" name="nik" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6"style="display:none">NIK</label>
+								<input class="form-control form-control-solid" type="text" placeholder="" name="nik" autocomplete="off" style="display:none"/>
 							</div>
                             <div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">Tanggal Pengaduan</label>
-								<input class="form-control form-control-solid" type="date" placeholder="" name="tgl_pengaduan" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6"style="display:none">Tanggal Pengaduan</label>
+								<input class="form-control form-control-solid" type="date" placeholder="" name="tgl_pengaduan" autocomplete="off" style="display:none"/>
                                 
 							</div>
                             <div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">Foto</label>
-								<input class="form-control form-control-solid" type="file" placeholder="" name="foto" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6"style="display:none">Foto</label>
+								<input class="form-control form-control-solid" type="file" placeholder="" name="foto" autocomplete="off" style="display:none"/>
 							</div>
                             <div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">Isi Laporan</label>
-								<input class="form-control form-control-solid" type="text" placeholder="" name="isi_laporan" autocomplete="off" />
+								<label class="form-label fw-bolder text-dark fs-6"style="display:none">Isi Laporan</label>
+								<input class="form-control form-control-solid" type="text" placeholder="" name="isi_laporan" autocomplete="off"style="display:none" />
 							</div>
 							<div class="fv-row mb-10">
-								<label class="form-label fw-bolder text-dark fs-6">Status</label>
-								<input class="form-control form-control-solid" type="text" placeholder="" name="status" autocomplete="off" />
+							<select name="status" required style="width 400px;">
+  <option value="">Pilih Status</option>
+  <option value="pengajuan" width="400px;">Pengajuan</option>
+  <option value="proses" width="400px;">Proses</option>
+  <option value="selesai" width="400px;">Selesai</option>
+  
+</select>
 							</div>
 							<div class="text-muted">Pastikan status yang anda masukan adalah salah satu dari : pengajuan, on_progress , dan selesai</div>
 

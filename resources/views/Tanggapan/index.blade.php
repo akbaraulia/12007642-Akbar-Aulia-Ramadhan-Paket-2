@@ -62,42 +62,70 @@
 															<input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-13-check" />
 														</div>
 													</th>
-													<th class="min-w-150px">Id Pengaduan</th>
+													<th class="min-w-150px">Nama Pelapor </th>
 													<th class="min-w-140px">Nama Petugas</th>
 													<th class="min-w-120px">Tanggal Tanggapan</th>
 													<th class="min-w-120px">Foto</th>
 													<th class="min-w-120px">Isi Tanggapan</th>
-													<th class="min-w-120px">Status</th>
+													
 													
 												</tr>
 											</thead>
 											<!--end::Table head-->
 											<!--begin::Table body-->
 											<tbody>
+												@foreach ($tanggapan as $tanggapan)
+												<?php
+          $petugas_id = DB::table('users')->where('id', $tanggapan->id_petugas)->get();
+		  $nama_pelapor = DB::table('pengaduans')->where('id', $tanggapan->id_petugas)->get();
+
+        ?>
 												<tr>
 													<td>
 														<div class="form-check form-check-sm form-check-custom form-check-solid">
 															<input class="form-check-input widget-13-check" type="checkbox" value="1" />
 														</div>
 													</td>
+													@foreach($nama_pelapor as $rows)
 													<td>
-														<a href="#" class="text-dark fw-bolder text-hover-primary fs-6">ID ( Get dari DB )</a>
+												
+              
+        
+														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{ $rows->nama_pelapor }}</a>
+														    
+														
+													</td>
+													@endforeach
+													@foreach($petugas_id as $rows)
+													<td>
+												
+              
+        
+														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{ $rows->name }}</a>
+														    
+														
+													</td>
+													@endforeach
+													<td>
+														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{$tanggapan->tgl_tanggapan}}</a>
 													</td>
 													<td>
-														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Akbar</a>
-														<span class="text-muted fw-bold text-muted d-block fs-7">Role ( Get dari db )</span>
+														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"><img src = "{{('uploads/'.$tanggapan->foto)}}" width="200px;" height="200px;"></a>
 													</td>
-													<td>
-														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">05/28/2020</a>
-													</td>
-													<td>
-														<a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">Foto (Get dari db)</a>
-													</td>
-													<td class="text-dark fw-bolder text-hover-primary fs-6">Pak Saya Di Begal</td>
-													<td>
-														<span class="badge badge-light-success">Approved</span>
-													</td>
+													<td class="text-dark fw-bolder text-hover-primary fs-6">{{$tanggapan->tanggapan}}</td>
 													
+</td>
+
+<td class="text-end">
+														
+													</td>
+
+												</tr>
+
+
+												
+
+@endforeach
 												</tr>
 
 

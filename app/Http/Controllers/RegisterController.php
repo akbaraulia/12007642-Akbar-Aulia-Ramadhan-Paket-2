@@ -1,22 +1,36 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class PetugasController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view ('Petugas.index');
+        return view ('Auth.Register');
     }
-    public function kalender()
+    public function store(Request $request)
     {
-        return view ('Petugas.kalender');
+        $user = new User;
+        
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->nik = $request->input('nik');
+        $user->no_telp= $request->input('no_telp');
+        $user->password = bcrypt($request->input('password'));
+        $user->role = $request->input('role');
+        $user->save();
+
+       
+        return redirect ('/login')->with('data user berhasil tersimpan');
+
+        
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -28,10 +42,7 @@ class PetugasController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    
 
     /**
      * Display the specified resource.

@@ -16,6 +16,11 @@ class PengaduanController extends Controller
         $pengaduan = Pengaduan::latest()->paginate(5);
         return view ('pengaduan.index', compact('pengaduan'));
     }
+    public function history()
+    {
+        $pengaduan = Pengaduan::latest()->paginate(5);
+        return view ('pengaduan.history', compact('pengaduan'));
+    }
     public function pengaduanadmin()
     {
         $pengaduan = Pengaduan::latest()->paginate(5);

@@ -130,8 +130,8 @@
                             <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="nik" autocomplete="off" />
                         </div>
                         <div class="fv-row mb-5">
-                            <label class="form-label fw-bolder text-dark fs-6" style="display:none">Role</label>
-                            <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="role" autocomplete="off" value="masyarakat" style="display:none" />
+                            <label class="form-label fw-bolder text-dark fs-6" >Role</label>
+                            <input class="form-control form-control-lg form-control-solid" type="text" placeholder="" name="role" autocomplete="off" />
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->

@@ -1,9 +1,13 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\User;
+
 
 class UserController extends Controller
 {
@@ -17,7 +21,7 @@ class UserController extends Controller
     }
     public function listmasyarakat()
     {
-        $users = User::latest()->wherein('role', ['masyrakat'])->paginate(5);
+        $users = User::latest()->wherein('role', ['masyarakat'])->paginate(5);
         return view ('Admin.akun.masyarakat', compact('users'));
     }
 
@@ -28,7 +32,7 @@ class UserController extends Controller
     {
         return view ('Admin.akun.create');
     }
-
+   
     /**
      * Store a newly created resource in storage.
      */
@@ -40,7 +44,7 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->nik = $request->input('nik');
         $user->no_telp= $request->input('no_telp');
-        $user->password = $request->input('password')->bcrypt['password'];
+        $user->password = bcrypt($request->input('password'));
         $user->role = $request->input('role');
         $user->save();
 
@@ -70,18 +74,20 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $user)
     {
-        $user = new User;
-        
+        $user = User::find($user);
+
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->nik = $request->input('nik');
         $user->no_telp= $request->input('no_telp');
-        $user->password = $request->input('password');
+        $user->password = bcrypt($request->input('password'));
         $user->role = $request->input('role');
-        $user->save();
-        return redirect ('/akun')->with('data user berhasil tersimpan');
+        $user->update();
+        return redirect('/akun')->with('success', 'Data berhasil tersimpan.');
+
+
     }
 
     /**
@@ -89,10 +95,16 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        
+        $user =  User::find($id);
         $user->delete();
-
-        return back()->with('akun berhasil dihapus');
+        return redirect('/akun')->with('success','Berhasil Hapus!');
     }
+    public function delete($id)
+    {
+        $user =  User::find($id);
+        $user->delete();
+        
+        return redirect('/akun')->with('success','Berhasil Hapus!');
+    }
+    
 }
